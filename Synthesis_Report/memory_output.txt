@@ -1,0 +1,523 @@
+ 
+****************************************
+Report : area
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:21 2020
+****************************************
+
+Library(s) Used:
+
+    uk65lscllmvbbr_120c25_tc (File: /opt/tools/Cadence/Cadence_lib/UMC65nm_PDK/STDCELLS/synopsys/ccs/uk65lscllmvbbr_120c25_tc_ccs.db)
+
+Number of ports:                           80
+Number of nets:                         57762
+Number of cells:                        57715
+Number of combinational cells:          24914
+Number of sequential cells:             32801
+Number of macros/black boxes:               0
+Number of buf/inv:                       1525
+Number of references:                      45
+
+Combinational area:              60893.999791
+Buf/Inv area:                     2407.320083
+Noncombinational area:          318816.008759
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                379710.008550
+Total area:                 undefined
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:21 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: uk65lscllmvbbr_120c25_tc   Library: uk65lscllmvbbr_120c25_tc
+Wire Load Model Mode: segmented
+
+  Startpoint: memory_1k32_reg_295__0_
+              (rising edge-triggered flip-flop clocked by pclk)
+  Endpoint: prdata_reg_0_
+            (rising edge-triggered flip-flop clocked by pclk)
+  Path Group: pclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  memory             wl0                   uk65lscllmvbbr_120c25_tc
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock pclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  memory_1k32_reg_295__0_/CK (DFEQM1RA)                   0.00 #     0.00 r
+  memory_1k32_reg_295__0_/Q (DFEQM1RA)                    0.12       0.12 f
+  U25385/Z (AOI22M1R)                                     0.05       0.18 r
+  U25386/Z (AN4M1R)                                       0.10       0.28 r
+  U4377/Z (ND4M1R)                                        0.06       0.34 f
+  U4376/Z (AOI211M1R)                                     0.06       0.40 r
+  U5041/Z (ND4M1R)                                        0.06       0.46 f
+  U5038/Z (AOI211M1R)                                     0.08       0.55 r
+  U6596/Z (ND4M1R)                                        0.07       0.61 f
+  U1226/Z (AOI211M2R)                                     0.06       0.67 r
+  U7107/Z (OAI211M1R)                                     0.04       0.71 f
+  U7106/Z (NR2B1M1R)                                      0.05       0.76 f
+  prdata_reg_0_/D (DFEQM1RA)                              0.00       0.76 f
+  data arrival time                                                  0.76
+
+  clock pclk (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  prdata_reg_0_/CK (DFEQM1RA)                             0.00       1.00 r
+  library setup time                                     -0.07       0.93
+  data required time                                                 0.93
+  --------------------------------------------------------------------------
+  data required time                                                 0.93
+  data arrival time                                                 -0.76
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.16
+
+
+1
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: The derived toggle rate value (2.000000) for the clock net 'pclk' conflicts with the annotated value (0.250000). Using the annotated value. (PWR-12)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:27 2020
+****************************************
+
+
+Library(s) Used:
+
+    uk65lscllmvbbr_120c25_tc (File: /opt/tools/Cadence/Cadence_lib/UMC65nm_PDK/STDCELLS/synopsys/ccs/uk65lscllmvbbr_120c25_tc_ccs.db)
+
+
+Operating Conditions: uk65lscllmvbbr_120c25_tc   Library: uk65lscllmvbbr_120c25_tc
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+memory                 wl0               uk65lscllmvbbr_120c25_tc
+
+
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  52.9935 mW   (78%)
+  Net Switching Power  =  15.3722 mW   (22%)
+                         ---------
+Total Dynamic Power    =  68.3657 mW  (100%)
+
+Cell Leakage Power     =  25.6309 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register          52.1462        2.0553e-04        2.3182e+07           52.1696  (  76.28%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.8470           15.3716        2.4494e+06           16.2187  (  23.72%)
+--------------------------------------------------------------------------------------------------
+Total             52.9932 mW        15.3718 mW     2.5631e+07 pW        68.3883 mW
+1
+ 
+****************************************
+Report : design
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:28 2020
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    uk65lscllmvbbr_120c25_tc (File: /opt/tools/Cadence/Cadence_lib/UMC65nm_PDK/STDCELLS/synopsys/ccs/uk65lscllmvbbr_120c25_tc_ccs.db)
+
+Local Link Library:
+
+    {/opt/tools/Cadence/Cadence_lib/UMC65nm_PDK/STDCELLS/synopsys/ccs/uk65lscllmvbbr_120c25_tc_ccs.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : uk65lscllmvbbr_120c25_tc
+    Library : uk65lscllmvbbr_120c25_tc
+    Process :   1.00
+    Temperature :  25.00
+    Voltage :   1.20
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    Selected from the default (area not fully known).
+
+Name           :   wl0
+Location       :   uk65lscllmvbbr_120c25_tc
+Resistance     :   0
+Capacitance    :   0.000171
+Area           :   0
+Slope          :   1
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     1.00
+
+
+
+Wire Loading Model Mode: segmented.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1
+ 
+****************************************
+Report : hierarchy
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:28 2020
+****************************************
+
+memory
+    AN2M1R                uk65lscllmvbbr_120c25_tc
+    AN2M2R                uk65lscllmvbbr_120c25_tc
+    AN4M1R                uk65lscllmvbbr_120c25_tc
+    AO22M1RA              uk65lscllmvbbr_120c25_tc
+    AOI22M1R              uk65lscllmvbbr_120c25_tc
+    AOI31M1R              uk65lscllmvbbr_120c25_tc
+    AOI211M1R             uk65lscllmvbbr_120c25_tc
+    AOI211M2R             uk65lscllmvbbr_120c25_tc
+    BUFM2R                uk65lscllmvbbr_120c25_tc
+    BUFM4R                uk65lscllmvbbr_120c25_tc
+    BUFM5R                uk65lscllmvbbr_120c25_tc
+    BUFM6R                uk65lscllmvbbr_120c25_tc
+    BUFM8R                uk65lscllmvbbr_120c25_tc
+    DFEQM1RA              uk65lscllmvbbr_120c25_tc
+    INVM1R                uk65lscllmvbbr_120c25_tc
+    INVM2R                uk65lscllmvbbr_120c25_tc
+    INVM4R                uk65lscllmvbbr_120c25_tc
+    INVM6R                uk65lscllmvbbr_120c25_tc
+    INVM8R                uk65lscllmvbbr_120c25_tc
+    INVM10R               uk65lscllmvbbr_120c25_tc
+    ND2M1R                uk65lscllmvbbr_120c25_tc
+    ND2M2R                uk65lscllmvbbr_120c25_tc
+    ND2M4R                uk65lscllmvbbr_120c25_tc
+    ND3M1R                uk65lscllmvbbr_120c25_tc
+    ND4B1M2R              uk65lscllmvbbr_120c25_tc
+    ND4M1R                uk65lscllmvbbr_120c25_tc
+    ND4M2R                uk65lscllmvbbr_120c25_tc
+    NR2B1M1R              uk65lscllmvbbr_120c25_tc
+    NR2B1M2R              uk65lscllmvbbr_120c25_tc
+    NR2M1R                uk65lscllmvbbr_120c25_tc
+    NR2M2R                uk65lscllmvbbr_120c25_tc
+    NR2M3R                uk65lscllmvbbr_120c25_tc
+    NR2M4R                uk65lscllmvbbr_120c25_tc
+    NR3M1R                uk65lscllmvbbr_120c25_tc
+    NR4M1R                uk65lscllmvbbr_120c25_tc
+    OAI21B20M1R           uk65lscllmvbbr_120c25_tc
+    OAI21M1R              uk65lscllmvbbr_120c25_tc
+    OAI21M3R              uk65lscllmvbbr_120c25_tc
+    OAI21M4R              uk65lscllmvbbr_120c25_tc
+    OAI31M1R              uk65lscllmvbbr_120c25_tc
+    OAI211B100M1R         uk65lscllmvbbr_120c25_tc
+    OAI211M1R             uk65lscllmvbbr_120c25_tc
+    OR2M1R                uk65lscllmvbbr_120c25_tc
+    OR3M1R                uk65lscllmvbbr_120c25_tc
+    OR4M1R                uk65lscllmvbbr_120c25_tc
+1
+ 
+****************************************
+Report : reference
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:28 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2M1R             uk65lscllmvbbr_120c25_tc
+                                  2.160000       1      2.160000  
+AN2M2R             uk65lscllmvbbr_120c25_tc
+                                  2.160000       1      2.160000  
+AN4M1R             uk65lscllmvbbr_120c25_tc
+                                  2.880000      91    262.080010  
+AO22M1RA           uk65lscllmvbbr_120c25_tc
+                                  2.880000      23     66.240003  
+AOI22M1R           uk65lscllmvbbr_120c25_tc
+                                  2.520000   16330  41151.599689  
+AOI31M1R           uk65lscllmvbbr_120c25_tc
+                                  2.520000      40    100.799999  
+AOI211M1R          uk65lscllmvbbr_120c25_tc
+                                  2.520000      90    226.799998  
+AOI211M2R          uk65lscllmvbbr_120c25_tc
+                                  2.520000      15     37.800000  
+BUFM2R             uk65lscllmvbbr_120c25_tc
+                                  1.440000    1075   1548.000062  
+BUFM4R             uk65lscllmvbbr_120c25_tc
+                                  2.160000     134    289.440012  
+BUFM5R             uk65lscllmvbbr_120c25_tc
+                                  2.520000      43    108.359999  
+BUFM6R             uk65lscllmvbbr_120c25_tc
+                                  2.520000      41    103.319999  
+BUFM8R             uk65lscllmvbbr_120c25_tc
+                                  3.240000      19     61.560000  
+DFEQM1RA           uk65lscllmvbbr_120c25_tc
+                                  9.720000   32800  318816.008759 n
+INVM1R             uk65lscllmvbbr_120c25_tc
+                                  1.080000      87     93.960004  
+INVM2R             uk65lscllmvbbr_120c25_tc
+                                  1.080000      56     60.480002  
+INVM4R             uk65lscllmvbbr_120c25_tc
+                                  1.440000      14     20.160001  
+INVM6R             uk65lscllmvbbr_120c25_tc
+                                  2.160000      54    116.640005  
+INVM8R             uk65lscllmvbbr_120c25_tc
+                                  2.520000       1      2.520000  
+INVM10R            uk65lscllmvbbr_120c25_tc
+                                  2.880000       1      2.880000  
+ND2M1R             uk65lscllmvbbr_120c25_tc
+                                  1.440000      96    138.240005  
+ND2M2R             uk65lscllmvbbr_120c25_tc
+                                  1.440000       2      2.880000  
+ND2M4R             uk65lscllmvbbr_120c25_tc
+                                  2.520000       1      2.520000  
+ND3M1R             uk65lscllmvbbr_120c25_tc
+                                  2.160000      38     82.080003  
+ND4B1M2R           uk65lscllmvbbr_120c25_tc
+                                  2.880000       2      5.760000  
+ND4M1R             uk65lscllmvbbr_120c25_tc
+                                  2.520000    4166  10498.319921  
+ND4M2R             uk65lscllmvbbr_120c25_tc
+                                  2.520000       6     15.120000  
+NR2B1M1R           uk65lscllmvbbr_120c25_tc
+                                  2.160000      36     77.760003  
+NR2B1M2R           uk65lscllmvbbr_120c25_tc
+                                  2.160000      32     69.120003  
+NR2M1R             uk65lscllmvbbr_120c25_tc
+                                  1.440000      53     76.320003  
+NR2M2R             uk65lscllmvbbr_120c25_tc
+                                  1.440000     124    178.560007  
+NR2M3R             uk65lscllmvbbr_120c25_tc
+                                  2.520000      65    163.799999  
+NR2M4R             uk65lscllmvbbr_120c25_tc
+                                  2.520000       4     10.080000  
+NR3M1R             uk65lscllmvbbr_120c25_tc
+                                  2.160000      23     49.680002  
+NR4M1R             uk65lscllmvbbr_120c25_tc
+                                  2.520000     929   2341.079982  
+OAI21B20M1R        uk65lscllmvbbr_120c25_tc
+                                  2.520000      23     57.960000  
+OAI21M1R           uk65lscllmvbbr_120c25_tc
+                                  2.160000     895   1933.200077  
+OAI21M3R           uk65lscllmvbbr_120c25_tc
+                                  3.240000       5     16.200000  
+OAI21M4R           uk65lscllmvbbr_120c25_tc
+                                  3.240000     125    405.000001  
+OAI31M1R           uk65lscllmvbbr_120c25_tc
+                                  2.520000      33     83.159999  
+OAI211B100M1R      uk65lscllmvbbr_120c25_tc
+                                  3.240000      98    317.520001  
+OAI211M1R          uk65lscllmvbbr_120c25_tc
+                                  2.520000      14     35.280000  
+OR2M1R             uk65lscllmvbbr_120c25_tc
+                                  2.160000       4      8.640000  
+OR3M1R             uk65lscllmvbbr_120c25_tc
+                                  2.520000       1      2.520000  
+OR4M1R             uk65lscllmvbbr_120c25_tc
+                                  2.880000      23     66.240003  
+-----------------------------------------------------------------------------
+Total 45 references                                 379710.008550
+1
+ 
+****************************************
+Report : qor
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:28 2020
+****************************************
+
+
+  Timing Path Group 'pclk'
+  -----------------------------------
+  Levels of Logic:              10.00
+  Critical Path Length:          0.76
+  Critical Path Slack:           0.16
+  Critical Path Clk Period:      1.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:              57714
+  Buf/Inv Cell Count:            1525
+  Buf Cell Count:                1312
+  Inv Cell Count:                 213
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     24914
+  Sequential Cell Count:        32800
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    60893.999791
+  Noncombinational Area:
+                        318816.008759
+  Buf/Inv Area:           2407.320083
+  Total Buffer Area:          2110.68
+  Total Inverter Area:         296.64
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:            379710.008550
+  Design Area:          379710.008550
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         57762
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: nanodcserver
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                  230.29
+  Logic Optimization:                 99.55
+  Mapping Optimization:              369.13
+  -----------------------------------------
+  Overall Compile Time:             1164.20
+  Overall Compile Wall Clock Time:   816.70
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+ 
+****************************************
+Report : constraint
+Design : memory
+Version: L-2016.03
+Date   : Sun Dec 27 02:39:28 2020
+****************************************
+
+
+                                                   Weighted
+    Group (max_delay/setup)      Cost     Weight     Cost
+    -----------------------------------------------------
+    pclk                         0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    max_delay/setup                                  0.00
+
+                              Total Neg  Critical
+    Group (critical_range)      Slack    Endpoints   Cost
+    -----------------------------------------------------
+    pclk                         0.00         0      0.00
+    default                      0.00         0      0.00
+    -----------------------------------------------------
+    critical_range                                   0.00
+
+                                                   Weighted
+    Group (min_delay/hold)       Cost     Weight     Cost
+    -----------------------------------------------------
+    pclk (no fix_hold)           0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    min_delay/hold                                   0.00
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    multiport_net                                    0.00 (MET)
+    max_transition                                   0.00 (MET)
+    max_capacitance                                  0.00 (MET)
+    max_delay/setup                                  0.00 (MET)
+    sequential_clock_pulse_width                     0.00 (MET)
+    critical_range                                   0.00 (MET)
+    max_leakage_power                            301195.66
+                                                          (VIOLATED)
+
+
+1
